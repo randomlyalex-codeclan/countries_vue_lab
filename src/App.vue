@@ -4,9 +4,9 @@
 
   <h1>Countries</h1>
   <div class="main-container">
-    <!-- <countries-list :allCountries="allCountries"></countries-list> -->
-    <countries-drop-down :allCountries="allCountries"></countries-drop-down>
-    <country-detail :country="selectedCountry"></country-detail>
+    <countries-list :allCountries="allCountries"></countries-list>
+    <!-- <countries-drop-down :allCountries="allCountries"></countries-drop-down> -->
+    <country-detail v-if=selectedCountry :country="selectedCountry"></country-detail>
   </div>
 
 

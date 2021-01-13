@@ -1,15 +1,28 @@
 <template>
     <div>
-        <select>
-            <option v-for="country in allCountries" :value="country"> {{ country.name }} </option>
+        <select v-model="dropDownSelect" v-on:change="handleChange">
+            <option v-for="(country, index) in allCountries" :key="index" :value="country"> {{ country.name }} </option>
         </select>
     </div>
 </template>
 
 <script>
+import { eventBus } from '../main.js'
 export default {
     name: 'countries-drop-down',
-    props: ['allCountries']
+    data(){
+    return {
+      dropDownSelect: null
+      };
+    },
+    props: ['allCountries'],
+    methods:{
+        handleChange: function() {
+            // console.log(event.target.value);
+            eventBus.$emit('country-selected', this.dropDownSelect);
+        }
+
+    }
 
 }
 </script>
