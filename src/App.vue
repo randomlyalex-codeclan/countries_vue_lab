@@ -5,7 +5,7 @@
   <h1>Countries</h1>
   <div class="main-container">
     <countries-list :allCountries="allCountries"></countries-list>
-    <country-detail :selectedCountry="selectedCountry"></country-detail>
+    <country-detail :country="selectedCountry"></country-detail>
   </div>
 
 

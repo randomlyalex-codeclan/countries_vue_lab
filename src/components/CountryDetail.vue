@@ -1,16 +1,23 @@
 <template>
-    <p> {{selectedCountry.name}} </p>
+    <div>
+        <h1> {{country.name}} </h1>
+        <h2>{{country.capital}}</h2>
+        <img :src=country.flag id="flag">
+    </div>
 </template>
 
 <script>
 export default {
     name: 'country-detail',
-    props: ['selected-country']
+    props: ['country']
 
 }
 </script>
 
-<style scoped>
+<style lang='css' scoped>
+    #flag {
+        max-width: 300px;
+    }
 
 
 </style>
