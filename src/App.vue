@@ -4,7 +4,8 @@
 
   <h1>Countries</h1>
   <div class="main-container">
-    <countries-list :allCountries="allCountries"></countries-list>
+    <!-- <countries-list :allCountries="allCountries"></countries-list> -->
+    <countries-drop-down :allCountries="allCountries"></countries-drop-down>
     <country-detail :country="selectedCountry"></country-detail>
   </div>
 
@@ -16,6 +17,7 @@
 import { eventBus }  from './main.js'
 import CountriesList from './components/CountriesList.vue'
 import CountryDetail from './components/CountryDetail.vue'
+import CountriesDropDown from './components/CountriesDropDown.vue'
 
 
 export default {
@@ -38,7 +40,8 @@ export default {
   },
   components: {
     "countries-list": CountriesList,
-    "country-detail": CountryDetail
+    "country-detail": CountryDetail,
+    "countries-drop-down": CountriesDropDown
   }
 }
 
